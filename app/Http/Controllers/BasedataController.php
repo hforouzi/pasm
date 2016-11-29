@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Tbl_category;
 use App\Tblcategory;
 use Illuminate\Http\Request;
 
@@ -31,6 +30,14 @@ class BasedataController extends Controller
 
         return $this;
     }
+
+    public function index()
+    {
+        $category=Tblcategory::with(['tblcategorytitle','tblcategorymeasure'])->paginate(10);
+
+        return view('basedata.index',compact('category'));
+
+    }
     public function create()
     {
        $category=Tblcategory::with(['tblcategorytitle','tblcategorymeasure'])->paginate(10);
@@ -42,7 +49,19 @@ class BasedataController extends Controller
         $this->validate($request,$this->rules,['required'=> ' :attribute وارد نمایید.'],$this->attributes);
 
         $data=Input::except('_token');
-        tbl_category::create($data);
-        return redirect('basedata/create')->with('message','با موفقیت ثبت شد');
+        Tblcategory::create($data);
+        return redirect('basedata')->with('message','با موفقیت ثبت شد');
+    }
+
+    public function edit($id)
+    {
+        $category=Tblcategory::with(['tblcategorytitle','tblcategorymeasure'])->findOrFail($id);
+        //$this->authorize('modify',$category);
+        return view('basedata.edit',compact('category'));
+    }
+
+    public function update($id)
+    {
+
     }
 }

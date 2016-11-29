@@ -55,9 +55,11 @@ oTable.fnDraw();
 function editRow(oTable, nRow) {
 var aData = oTable.fnGetData(nRow);
 var jqTds = $('>td', nRow);
-jqTds[0].innerHTML = '{!! Form::select('category_title',App\Tblcategorytitle::pluck('category_title','category_title_id'),null,['class'=>'cs-select cs-skin-elastic']) !!}';
+jqTds[0].innerHTML = "{!! Form::select('category_title',App\Tblcategorytitle::pluck('category_title','category_title_id')," + 2 + ",['class'=>'cs-select cs-skin-elastic']) !!}';
                 //'<input type="text" class="form-control" value="' + aData[0] + '">';
-jqTds[1].innerHTML = '<input type="text" class="form-control" value="' + aData[1] + '">';
+    console.log(jqTds);
+jqTds[1].innerHTML ='{!! Form::select('category_measure',App\tblcategorymeasure::pluck('category_measure_title','category_measure_id'),null,['class'=>'cs-select cs-skin-elastic']) !!}';
+        //'<input type="text" class="form-control" value="' + aData[1] + '">';
 jqTds[2].innerHTML = '<input type="text" class="form-control" value="' + aData[2] + '">';
 
 jqTds[3].innerHTML = '<a class="save-row" href="">Save</a>';
