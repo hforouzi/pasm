@@ -303,6 +303,7 @@ $.extend( $.validator, {
 			}
 		}
 	},
+	translation: "FA",
 
 	// http://jqueryvalidation.org/jQuery.validator.setDefaults/
 	setDefaults: function( settings ) {

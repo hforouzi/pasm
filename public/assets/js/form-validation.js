@@ -32,53 +32,166 @@ var FormValidator = function () {
                 }
             },
             ignore: "",
+            lang: 'FA',
             rules: {
-                firstname: {
-                    minlength: 2,
-                    required: true
-                },
-                lastname: {
-                    minlength: 2,
-                    required: true
-                },
-                email: {
+                plan_program_1:{
                     required: true,
-                    email: true
                 },
-                password: {
-                    minlength: 6,
+                plan_price_base_1:{
                     required: true
+
                 },
-                password_again: {
+                plan_total_1:{
+                    required: true
+
+                },
+                plan_program_2:{
                     required: true,
-                    minlength: 5,
-                    equalTo: "#password"
+
                 },
-                yyyy: "FullDate",
-                gender: {
+                plan_price_base_2:{
                     required: true
+
                 },
-                zipcode: {
+                plan_total_2:{
+                    required: true
+
+                },
+                plan_program_3:{
                     required: true,
-                    number: true,
-                    minlength: 5
+
                 },
-                city: {
+                plan_price_base_3:{
                     required: true
+
                 },
-                newsletter: {
+                plan_total_3:{
                     required: true
-                }
+
+                },
+                plan_program_4:{
+                    required: true,
+
+                },
+                plan_price_base_4:{
+                    required: true
+
+                },
+                plan_total_4:{
+                    required: true
+
+                },
+                plan_program_5:{
+                    required: true,
+
+                },
+                plan_price_base_5:{
+                    required: true
+
+                },
+                plan_total_5:{
+                    required: true
+
+                },
+                plan_program_6:{
+                    required: true,
+
+                },
+                plan_price_base_6:{
+                    required: true
+
+                },
+                plan_total_6:{
+                    required: true
+
+                },
+                plan_program_7:{
+                    required: true,
+
+                },
+                plan_price_base_7:{
+                    required: true
+
+                },
+                plan_total_7:{
+                    required: true
+
+                },
+                plan_program_8:{
+                    required: true,
+
+                },
+                plan_price_base_8:{
+                    required: true
+
+                },
+                plan_total_8:{
+                    required: true
+
+                },
+                plan_program_9:{
+                    required: true,
+
+                },
+                plan_price_base_9:{
+                    required: true
+
+                },
+                plan_total_9:{
+                    required: true
+
+                },
+                plan_program_10:{
+                    required: true,
+
+                },
+                plan_price_base_10:{
+                    required: true
+
+                },
+                plan_total_10:{
+                    required: true
+
+                },
+                plan_program_11:{
+                    required: true,
+
+                },
+                plan_price_base_11:{
+                    required: true
+
+                },
+                plan_total_11:{
+                    required: true
+
+                },
+                plan_program_12:{
+                    required: true,
+
+                },
+                plan_price_base_12:{
+                    required: true
+
+                },
+                plan_total_12:{
+                    required: true
+
+                },
+                plan_program_13:{
+                    required: true,
+
+                },
+                plan_price_base_13:{
+                    required: true
+
+                },
+                plan_total_13:{
+                    required: true
+
+                },
+
             },
-            messages: {
-                firstname: "Please specify your first name",
-                lastname: "Please specify your last name",
-                email: {
-                    required: "We need your email address to contact you",
-                    email: "Your email address must be in the format of name@domain.com"
-                },
-                gender: "Please check a gender!"
-            },
+
             groups: {
                 DateofBirth: "dd mm yyyy",
             },
@@ -226,7 +339,6 @@ var FormValidator = function () {
         init: function () {
         	validateCheckRadio();
             runValidator1();
-            runValidator2();
         }
     };
 }();

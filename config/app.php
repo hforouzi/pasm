@@ -159,7 +159,8 @@ return [
         Bican\Roles\RolesServiceProvider::class,
         'Lavary\Menu\ServiceProvider',
         Collective\Html\HtmlServiceProvider::class,
-
+        Morilog\Jalali\JalaliServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
     ],
 
     /*
@@ -208,6 +209,8 @@ return [
         'Menu'       => 'Lavary\Menu\Facade',
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'jDate' => Morilog\Jalali\Facades\jDate::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];

@@ -21,8 +21,15 @@
 
         <!-- start: NAVBAR COLLAPSE -->
         <div class="navbar-collapse collapse">
+
             <ul class="nav navbar-right">
-                <!-- start: MESSAGES DROPDOWN -->
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}">ورود</a></li>
+                    <li><a href="{{ url('/register') }}">ثبت نام</a></li>
+            @else
+                    <?php $t=json_decode((\App\Person::where('person_id', Auth::user()->person_id)->get()));?>
+
+               {{-- <!-- start: MESSAGES DROPDOWN -->
                 <li class="dropdown">
                     <a href class="dropdown-toggle" data-toggle="dropdown">
                         <span class="dot-badge partition-red"></span> <i class="ti-comment"></i> <span>پیام ها</span>
@@ -86,8 +93,8 @@
                         </li>
                     </ul>
                 </li>
-                <!-- end: MESSAGES DROPDOWN -->
-                <!-- start: ACTIVITIES DROPDOWN -->
+                <!-- end: MESSAGES DROPDOWN -->--}}
+            {{--    <!-- start: ACTIVITIES DROPDOWN -->
                 <li class="dropdown">
                     <a href class="dropdown-toggle" data-toggle="dropdown">
                         <i class="ti-check-box"></i> <span>فعالیت ها</span>
@@ -113,8 +120,8 @@
                         </li>
                     </ul>
                 </li>
-                <!-- end: ACTIVITIES DROPDOWN -->
-                <!-- start: LANGUAGE SWITCHER -->
+                <!-- end: ACTIVITIES DROPDOWN -->--}}
+         {{--       <!-- start: LANGUAGE SWITCHER -->
                 <li class="dropdown">
                     <a href class="dropdown-toggle" data-toggle="dropdown">
                         <i class="ti-world"></i> فارسی
@@ -133,11 +140,11 @@
 
                     </ul>
                 </li>
-                <!-- start: LANGUAGE SWITCHER -->
+                <!-- start: LANGUAGE SWITCHER -->--}}
                 <!-- start: USER OPTIONS DROPDOWN -->
                 <li class="dropdown current-user">
                     <a href class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="/assets/images/avatar-1.jpg" alt="Peter"> <span class="username">حسین <i class="ti-angle-down"></i></i></span>
+                        <img src="/assets/images/avatar-1.jpg" alt="Peter"> <span class="username"><?php  echo($t[0]->person_name); ?><i class="ti-angle-down"></i></i></span>
                     </a>
                     <ul class="dropdown-menu dropdown-dark">
                         <li>
@@ -161,13 +168,14 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{ url('/logout') }}">
                                 خروج
                             </a>
                         </li>
                     </ul>
                 </li>
                 <!-- end: USER OPTIONS DROPDOWN -->
+                @endif
             </ul>
             <!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
             <div class="close-handle visible-xs-block menu-toggler" data-toggle="collapse" href=".navbar-collapse">
@@ -176,12 +184,8 @@
             </div>
             <!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
         </div>
-        <a class="dropdown-off-sidebar sidebar-mobile-toggler hidden-md hidden-lg" data-toggle-class="app-offsidebar-open" data-toggle-target="#app" data-toggle-click-outside="#off-sidebar">
-            &nbsp;
-        </a>
-        <a class="dropdown-off-sidebar hidden-sm hidden-xs" data-toggle-class="app-offsidebar-open" data-toggle-target="#app" data-toggle-click-outside="#off-sidebar">
-            &nbsp;
-        </a>
+
         <!-- end: NAVBAR COLLAPSE -->
+
     </header>
     <!-- end: TOP NAVBAR -->

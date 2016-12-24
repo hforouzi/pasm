@@ -299,13 +299,13 @@ var Index = function() {
 			legendTemplate: '<ul class="tc-chart-js-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].strokeColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>'
 		};
 		// Get context with jQuery - using jQuery's .get() method.
-		var ctx = $("#chart4").get(0).getContext("2d");
+	//	var ctx = $("#chart4").get(0).getContext("2d");
 		// This will get the first returned node in the jQuery collection.
-		var chart4 = new Chart(ctx).Radar(data, options);
+	//	var chart4 = new Chart(ctx).Radar(data, options);
 		//generate the legend
-		var legend = chart4.generateLegend();
+	//	var legend = chart4.generateLegend();
 		//and append it to your page somewhere
-		$('#chart4Legend').append(legend);
+	//	$('#chart4Legend').append(legend);
 	};
 	// function to initiate Sparkline
 	var sparkResize;

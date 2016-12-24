@@ -18,4 +18,5 @@ class Tblcategory extends Model
     {
         return $this->belongsTo('App\Tblcategorymeasure','category_measure');
     }
+
 }

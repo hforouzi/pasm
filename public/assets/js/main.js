@@ -14,11 +14,10 @@ var Main = function() {
 		var eventObject = isTouch() ? 'click' : 'mouseenter', elem = $('#sidebar'), ul = "", menuTitle, _this, sidebarMobileToggler = $('.sidebar-mobile-toggler'), $winOffsetTop = 0, $winScrollTop = 0, $appWidth;
 
 		elem.on('click', 'a', function(e) {
-
 			_this = $(this);
-			if (isSidebarClosed() && !isSmallDevice() && !_this.closest("ul").hasClass("sub-menu"))
+			if (isSidebarClosed() && !isSmallDevice() && !_this.closest("ul").hasClass("sub-menu")) {
 				return;
-
+			}
 			_this.closest("ul").find(".open").not(".active").children("ul").not(_this.next()).slideUp(200).parent('.open').removeClass("open");
 			if (_this.next().is('ul') && _this.parent().toggleClass('open')) {
 
@@ -36,8 +35,8 @@ var Main = function() {
 		elem.on(eventObject, 'a', function(e) {
 			if (!isSidebarClosed() || isSmallDevice())
 				return;
-			_this = $(this);
 
+			_this = $(this);
 			if (!_this.parent().hasClass('hover') && !_this.closest("ul").hasClass("sub-menu")) {
 				wrapLeave();
 				_this.parent().addClass('hover');
@@ -93,7 +92,7 @@ var Main = function() {
 		});
 
 		sidebarMobileToggler.on('click', function() {
-			
+
 			$winScrollTop = $winOffsetTop;
 			if (!$('#app').hasClass('app-slide-off') && !$('#app').hasClass('app-offsidebar-open')) {
 				$winOffsetTop = $win.scrollTop();
@@ -254,7 +253,7 @@ var Main = function() {
 			fixedSidebar : true,
 			closedSidebar : false,
 			fixedFooter : false,
-			theme : 'theme-1'
+			theme : 'theme-3'
 		};
 		if ($.cookie) {
 			if ($.cookie("clip-setting")) {

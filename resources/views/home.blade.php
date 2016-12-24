@@ -2,7 +2,6 @@
 
 @section('content')
 
-        <div class="main-content" >
             <div class="wrap-content container" id="container">
                 <!-- start: DASHBOARD TITLE -->
                 <section id="page-title" class="padding-top-15 padding-bottom-15">
@@ -394,8 +393,7 @@
         <script src="/assets/js/index.js"></script>
         <script>
             jQuery(document).ready(function() {
-                Main.init();
-                Index.init();
+                Index.init()
             });
         </script>
         <!-- end: JavaScript Event Handlers for this page -->

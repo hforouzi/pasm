@@ -33,6 +33,8 @@ class BasedataController extends Controller
 
     public function index()
     {
+
+
         $category=Tblcategory::with(['tblcategorytitle','tblcategorymeasure'])->paginate(10);
 
         return view('basedata.index',compact('category'));
@@ -60,8 +62,15 @@ class BasedataController extends Controller
         return view('basedata.edit',compact('category'));
     }
 
-    public function update($id)
+    public function update($id,Request $request)
     {
+        $contact=Tblcategory::findOrFail($id);
 
+        $this->validate($request, $this->rules);
+
+
+        $contact->update($request->all());
+
+        return redirect('basedata')->with('message','با موفقیت ویرایش شد.');
     }
 }
